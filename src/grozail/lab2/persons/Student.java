@@ -10,8 +10,8 @@ public class Student extends Person implements Notifiable {
 	private String login;
 	private String email;
 
-	public Student(String login, String email) {
-		super("no-name");
+	public Student(String name, String login, String email) {
+		super(name);
 		this.login = login;
 		this.email = email;
 	}

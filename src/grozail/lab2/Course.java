@@ -23,7 +23,7 @@ public class Course {
 		Set<Postgraduate> postgraduates = new HashSet<>();
 		for (Student student : students) {
 			if(student instanceof Postgraduate)
-				if(((Postgraduate) student).getSupervisor().getName().equals(name))
+				if(((Postgraduate) student).getSupervisor().getName().equals(nameOfSupervisor))
 					postgraduates.add((Postgraduate)student);
 		}
 		return postgraduates;

@@ -17,11 +17,11 @@ public class ProgrammingTest {
 	public static void main(String[] args) {
 
 		Set<Student> courseListeners = new HashSet<>();
-		courseListeners.add(new Postgraduate("one", "one"));
-		courseListeners.add(new Undergraduate("two", "two"));
-		courseListeners.add(new Postgraduate("three", "three"));
-		courseListeners.add(new Undergraduate("four", "four"));
-		courseListeners.add(new Postgraduate("five", "five"));
+		courseListeners.add(new Postgraduate("one", "one", "one"));
+		courseListeners.add(new Undergraduate("two", "two", "two"));
+		courseListeners.add(new Postgraduate("three", "three", "three"));
+		courseListeners.add(new Undergraduate("four", "four", "four"));
+		courseListeners.add(new Postgraduate("five", "five", "five"));
 
 		Course course = new Course("Course", courseListeners);
 

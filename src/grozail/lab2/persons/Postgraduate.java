@@ -7,8 +7,8 @@ package grozail.lab2.persons;
 public class Postgraduate extends Student {
 	private Academic supervisor;
 
-	public Postgraduate(String login, String email) {
-		super(login, email);
+	public Postgraduate(String name, String login, String email) {
+		super(name, login, email);
 		supervisor = new Academic("no-name-academic");
 	}
 
