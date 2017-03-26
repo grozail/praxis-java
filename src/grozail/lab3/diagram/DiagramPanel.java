@@ -17,6 +17,7 @@ import static java.lang.Math.abs;
 public class DiagramPanel extends JPanel {
 	ArrayList<Slice> slices = new ArrayList<>();
 	Rectangle rectangle = new Rectangle(20, 20, 300, 300);
+	String message;
 	public DiagramPanel() {
 		Random random = new Random(1488);
 		try (BufferedReader bufferedReader = new BufferedReader(new FileReader("src/grozail/lab3/input.txt"))) {
@@ -31,32 +32,39 @@ public class DiagramPanel extends JPanel {
 						new Color(abs(random.nextInt() % 256), abs(random.nextInt() % 256), abs(random.nextInt() % 256))));
 
 			}
+			message = "OK";
 		}
 		catch (Exception e) {
 			slices.clear();
+			message = "Wrong input";
 		}
 		repaint();
 	}
 
 	void drawDiagram(Graphics2D graphics2D, Rectangle area) {
-		double sum = 0;
-		for (Slice slice : slices) {
-			sum += slice.value;
-		}
-		double currentValue = 0;
-		int startAngle = 0;
-		int i = 0;
-		for (Slice slice : slices) {
-			startAngle = (int) (currentValue * 360 / sum);
-			int arcAngle = (int) (slice.value * 360 / sum);
-			graphics2D.setColor(slice.color);
-			graphics2D.fillArc(area.x, area.y, area.width, area.height, startAngle, arcAngle);
-			currentValue += slice.value;
+		if (message.equals("OK")) {
+			double sum = 0;
+			for (Slice slice : slices) {
+				sum += slice.value;
+			}
+			double currentValue = 0;
+			int startAngle = 0;
+			int i = 0;
+			for (Slice slice : slices) {
+				startAngle = (int) (currentValue * 360 / sum);
+				int arcAngle = (int) (slice.value * 360 / sum);
+				graphics2D.setColor(slice.color);
+				graphics2D.fillArc(area.x, area.y, area.width, area.height, startAngle, arcAngle);
+				currentValue += slice.value;
 
-			graphics2D.fillRect(area.x + 330, area.y + 30 * i, 20, 20);
-			graphics2D.setColor(Color.black);
-			graphics2D.drawString(slice.key + " = " + slice.value, area.x + 360, area.y + 30 * i);
-			i++;
+				graphics2D.fillRect(area.x + 330, area.y + 30 * i, 20, 20);
+				graphics2D.setColor(Color.black);
+				graphics2D.drawString(slice.key + " = " + slice.value, area.x + 360, area.y + 30 * i);
+				i++;
+			}
+		}
+		else {
+			graphics2D.drawString(message, 10, 10);
 		}
 	}
 
