@@ -1,6 +1,6 @@
 package grozail.app;
 
-import grozail.lab1.view.mainform.MainFrame1;
+import grozail.lab5.MainFrame5;
 
 import javax.swing.*;
 
@@ -10,6 +10,6 @@ import javax.swing.*;
  */
 public class Application {
 	public static void main(String[] args) {
-		SwingUtilities.invokeLater(MainFrame1::new);
+		SwingUtilities.invokeLater(MainFrame5::new);
 	}
 }
