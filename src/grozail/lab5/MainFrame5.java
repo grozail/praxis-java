@@ -14,7 +14,7 @@ public class MainFrame5 extends JFrame {
 	public static final Dimension DEF_DIMMENSION = new Dimension(DEF_WIDTH, DEF_HEIGHT);
 
 	public static final int ROW_COUNT = 10;
-	public static final int COLUMN_COUNT = 10;
+	public static final int COLUMN_COUNT = 100;
 
 	private ExcelTablePanel excelTablePanel;
 	public MainFrame5() {
@@ -25,7 +25,7 @@ public class MainFrame5 extends JFrame {
 		setLocation(DEF_WIDTH, 0);
 		setLayout(new BorderLayout());
 		excelTablePanel = new ExcelTablePanel();
-		add(excelTablePanel, BorderLayout.CENTER);
+		add(new JScrollPane(excelTablePanel), BorderLayout.CENTER);
 		pack();
 		setVisible(true);
 

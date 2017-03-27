@@ -23,7 +23,7 @@ public class RowList extends JList {
 
 			@Override
 			public Object getElementAt(int index) {
-				return index + 1;
+				return index;
 			}
 		};
 		RowList list = new RowList(model);
