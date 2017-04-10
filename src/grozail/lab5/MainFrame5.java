@@ -13,7 +13,7 @@ public class MainFrame5 extends JFrame {
 	public static final int DEF_HEIGHT = DEF_TOOLKIT.getScreenSize().height / 2;
 	public static final Dimension DEF_DIMMENSION = new Dimension(DEF_WIDTH, DEF_HEIGHT);
 
-	public static final int ROW_COUNT = 10;
+	public static final int ROW_COUNT = 20;
 	public static final int COLUMN_COUNT = 100;
 
 	private ExcelTablePanel excelTablePanel;
@@ -25,13 +25,13 @@ public class MainFrame5 extends JFrame {
 		setLocation(DEF_WIDTH, 0);
 		setLayout(new BorderLayout());
 		excelTablePanel = new ExcelTablePanel();
-		add(new JScrollPane(excelTablePanel), BorderLayout.CENTER);
+		add(excelTablePanel, BorderLayout.CENTER);
 		pack();
 		setVisible(true);
 
 	}
 
-	public static void log(String message) {
+	public static void log(Object message) {
 		System.out.println(message);
 	}
 }
